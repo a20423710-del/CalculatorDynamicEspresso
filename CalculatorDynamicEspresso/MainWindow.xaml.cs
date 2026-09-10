@@ -94,7 +94,7 @@ namespace CalculatorDynamicEspresso
         private void EqualsButton_Click(object sender, RoutedEventArgs e)
         {
 
-            try          //FIX IT   
+            try 
             {
                 var interpreter = new Interpreter();
                 var result = interpreter.Eval(DisplayText);
