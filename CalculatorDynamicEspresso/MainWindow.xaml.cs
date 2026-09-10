@@ -94,7 +94,7 @@ namespace CalculatorDynamicEspresso
         private void EqualsButton_Click(object sender, RoutedEventArgs e)
         {
 
-            try      //NEED TO FIX IT
+            try          //FIX IT   
             {
                 var interpreter = new Interpreter();
                 var expr = Regex.Replace(DisplayText ?? string.Empty, @"\p{C}+", ""); // Steuerzeichen entfernen
