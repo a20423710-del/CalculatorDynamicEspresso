@@ -127,7 +127,7 @@
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
 
-			<Button x:Name="MultiplyButton" Grid.Row="0" Style="{StaticResource CalcButtonStyle}" Content="x" Click="MultiplyButton_Click" />
+			<Button x:Name="MultiplyButton" Grid.Row="0" Style="{StaticResource CalcButtonStyle}" Content="*" Click="MultiplyButton_Click" />
 			<Button x:Name="DivideButton" Grid.Row="1" Style="{StaticResource CalcButtonStyle}" Content="/" Click="DivideButton_Click" />
 			<Button x:Name="PlusButton" Grid.Row="2" Style="{StaticResource CalcButtonStyle}" Content="+" Click="PlusButton_Click" />
 			<Button x:Name="MinusButton" Grid.Row="3" Style="{StaticResource CalcButtonStyle}" Content="-" Click="MinusButton_Click" />

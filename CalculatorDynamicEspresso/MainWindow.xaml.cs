@@ -73,7 +73,7 @@ namespace CalculatorDynamicEspresso
 
         private void MultiplyButton_Click(object sender, RoutedEventArgs e)
         {
-            HandleInput("x");
+            HandleInput("*");
         }
 
         private void DivideButton_Click(object sender, RoutedEventArgs e)
@@ -97,9 +97,9 @@ namespace CalculatorDynamicEspresso
             try          //FIX IT   
             {
                 var interpreter = new Interpreter();
-                var expr = Regex.Replace(DisplayText ?? string.Empty, @"\p{C}+", ""); // Steuerzeichen entfernen
-                expr = expr.Trim();
-                var result = interpreter.Eval(expr);
+                //var expr = Regex.Replace(DisplayText ?? string.Empty, @"\p{C}+", ""); // Steuerzeichen entfernen
+                //expr = expr.Trim();
+                var result = interpreter.Eval(DisplayText);
                 DisplayText = result?.ToString() ?? string.Empty;
             }
             catch (DivideByZeroException ex)
