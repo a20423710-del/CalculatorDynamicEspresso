@@ -93,8 +93,8 @@ namespace CalculatorDynamicEspresso
 
         private void EqualsButton_Click(object sender, RoutedEventArgs e)
         {
-
-            try 
+            //DynamicEspresso interpreter to evaluate the expression
+            try
             {
                 var interpreter = new Interpreter();
                 var result = interpreter.Eval(DisplayText);
