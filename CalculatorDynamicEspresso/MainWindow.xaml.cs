@@ -97,7 +97,12 @@ namespace CalculatorDynamicEspresso
             try
             {
                 var interpreter = new Interpreter();
-                var result = interpreter.Eval(DisplayText);
+                // Normalize decimal comma to dot (e.g., "3,0" -> "3.0")
+                var expr = System.Text.RegularExpressions.Regex.Replace(DisplayText, @"(?<=\d),(?=\d)", ".");
+                // Convert integer divisions like "3/9" to floating-point division "3.0/9"
+                // Only replace when both operands are pure integers (no dot)
+                expr = System.Text.RegularExpressions.Regex.Replace(expr, @"(?<![\d.])(\d+)\s*/\s*(\d+)(?![\d.])", "$1.0/$2");
+                var result = interpreter.Eval(expr);
                 DisplayText = result?.ToString() ?? string.Empty;
             }
             catch (DivideByZeroException ex)
